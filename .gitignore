@@ -1,0 +1,13 @@
+venv/
+.env/
+ENV/
+env/
+*.pyc
+__pycache__/
+bin/
+include/
+lib/
+lib64
+share/
+矢沢永吉/
+pyvenv.cfg
