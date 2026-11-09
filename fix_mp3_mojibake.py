@@ -124,5 +124,12 @@ options:
     if '-v' in sys.argv:
         verbose = True
         print("Verbose mode enabled.")
-    count, updated = process_folder(sys.argv[-1], dry_run=dry_run)
+
+    start_folder = str(sys.argv[-1])
+
+    #if called by nemo action script, the spaces are backslashed. Un-backslash them
+    start_folder = start_folder.replace('\\', '')
+
+    verbose_print(f"Starting in folder '{start_folder}'")
+    count, updated = process_folder(start_folder, dry_run=dry_run)
     print(f"\nProcessed {count} MP3 files, updated {updated}.")
